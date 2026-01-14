@@ -6,8 +6,6 @@ public:
         int mid = l + (h - l) / 2;
 
         if (nums[mid] == target) return mid;
-
-        // LEFT half is sorted
         if (nums[l] <= nums[mid]) {
             if (nums[l] <= target && target < nums[mid]) {
                 return binsearch(nums, target, l, mid - 1);
@@ -15,7 +13,6 @@ public:
                 return binsearch(nums, target, mid + 1, h);
             }
         }
-        // RIGHT half is sorted
         else {
             if (nums[mid] < target && target <= nums[h]) {
                 return binsearch(nums, target, mid + 1, h);
