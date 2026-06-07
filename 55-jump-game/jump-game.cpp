@@ -1,15 +1,19 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        int maxReach = 0;
+        int n = nums.size();
 
-        for(int i = 0; i < nums.size(); i++) {
-            if(i > maxReach)
-                return false;
+        vector<int> dp(n, 0);
+        dp[0] = 1;
 
-            maxReach = max(maxReach, i + nums[i]);
+        for(int i = 0; i < n; i++) {
+            if(dp[i] == 1) {
+                for(int jump = 1; jump <= nums[i] && i + jump < n; jump++) {
+                    dp[i + jump] = 1;
+                }
+            }
         }
 
-        return true;
+        return dp[n - 1];
     }
 };
