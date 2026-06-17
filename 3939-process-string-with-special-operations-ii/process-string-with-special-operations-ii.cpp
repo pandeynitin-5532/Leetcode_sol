@@ -35,7 +35,7 @@ public:
                 k = m - 1 - k;
             }
 
-            if (i > 0) cur = len[i + 1];
+            if (i > 0) cur = len[i - 1];
             else cur = 0;
         }
 
