@@ -11,7 +11,7 @@ public:
             auto [x, y] = dq.front();
             dq.pop_front();
             for (int k = 0; k < 4; k++) {
-                int nx = x - d[k], ny = y + d[k + 1];
+                int nx = x + d[k], ny = y + d[k + 1];
                 if (nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
                 int nd = dist[x][y] + grid[nx][ny];
                 if (nd < dist[nx][ny]) {
