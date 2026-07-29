@@ -43,7 +43,7 @@ public:
         int len = 0;
         for (int x : half) len += x;
 
-        for (int pos = 0; pos < len; pos++) {
+        for (int pos= 0; pos < len; pos++) {
             for (int c = 0; c < 26; c++) {
                 if (!half[c]) continue;
                 half[c]--;
